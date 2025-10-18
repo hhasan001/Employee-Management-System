@@ -10,7 +10,7 @@ public class EmployeeManagementSystemApplication {
 		SpringApplication.run(EmployeeManagementSystemApplication.class, args);
 	}
 	public void test(){
-		System.out.println("hamza hasan hasan");
+		System.out.println("hhasan");
 	}
 
 }
