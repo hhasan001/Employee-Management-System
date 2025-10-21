@@ -1,20 +1,17 @@
-package com.project.self.Model;
+package com.project.self.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.NonNull;
 
 @Entity
 //@Data
 public class Employee {
-    public Long getId() {
-        return id;
+    public Long getEmpid() {
+        return Empid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmpid(Long empid) {
+        this.Empid = empid;
     }
 
     public String getName() {
@@ -59,10 +56,25 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Empid;
+    @NonNull
     private String name;
     private Long salary;
+    @NonNull
     private String role;
+    @NonNull
     private String email;
     private String location;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id") // foreign key
+    private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }
