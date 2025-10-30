@@ -4,6 +4,7 @@ import com.project.self.Entity.Department;
 import com.project.self.Entity.Employee;
 import com.project.self.repo.DepRepo;
 import com.project.self.repo.EmpRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,6 @@ import java.util.Optional;
 public class DepService {
 
     public DepRepo depRepo;
-
 
     public DepService(DepRepo depRepo) {
         this.depRepo = depRepo;
